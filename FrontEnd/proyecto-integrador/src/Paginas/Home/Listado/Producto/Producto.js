@@ -14,9 +14,11 @@ import Politicas from "./Politicas.jsx";
 const Producto = () => {
   const { id } = useParams();
   // pasar id a la url de fetch
-  const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" + id;
-  const urlPoliticas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/politicas/listaPoliticas";
+  // const urlProductos =
+  //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" + id;
+  const urlProductos = "http://localhost:8080/productos/" + id;
+  // const urlPoliticas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/politicas/listaPoliticas";
+  const urlPoliticas = "http://localhost:8080/politicas/listaPoliticas";
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
   const { data } = useFetch(urlProductos );

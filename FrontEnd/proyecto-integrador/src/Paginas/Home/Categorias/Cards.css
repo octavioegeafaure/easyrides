@@ -18,14 +18,15 @@
 
 .cardsCategoria-unidad{
     border-radius: 1rem;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 12%);
     cursor: pointer;
     /* background-color:#eeeff0 ; */
     transition:  .2s;
 }
 .cardsCategoria-unidad:hover {
-    transform: scale(1.04);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
 }
+
 .cardsCategoria-unidad-img{
     width: 100%;
     border-radius: 15px 15px 0px 0px;

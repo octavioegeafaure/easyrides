@@ -6,8 +6,9 @@ import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductos
 
 const ListadoCiudades = () => {
   // aca consumo el context de data
-  const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
+  // const urlProductos =
+  //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
+  const urlProductos = "http://localhost:8080/productos";
   const { data } = useFetch(urlProductos);
   const { elegirCiudades } = useContext(CiudadesContext);
   const { setElegirDataPaginaProductos } = useContext(
@@ -15,7 +16,7 @@ const ListadoCiudades = () => {
   );
 
   return (
-    <div className="listado-container">
+    <div className="cardsProductos">
       {data &&
         data.productos.map((prod) => (
           <>

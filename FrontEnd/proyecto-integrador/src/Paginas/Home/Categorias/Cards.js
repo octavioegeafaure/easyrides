@@ -5,7 +5,8 @@ import { CategoriasContext } from "../../../Context/CategoriasContext";
 import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
 import { DataProductosContext } from "../../../Context/DataProductosContext";
 export default function Cards() {
-  const urlCategorias = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
+  // const urlCategorias = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
+  const urlCategorias = "http://localhost:8080/categorias";
   const { data } = useFetch(urlCategorias)
   const {  setElegirCategorias } = useContext(CategoriasContext);
   const {setMostrarCategorias } = useContext(MostrarCategoriasContext);
