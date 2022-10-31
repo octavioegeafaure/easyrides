@@ -14,12 +14,11 @@ export const SearchBar = () => {
   const { data } = useFetch(urlCiudades);
   const { setDataProductos } = useContext(DataProductosContext);
   // const [elegirCiudades, setElegirCiudades] = useState()
-  // context de busquedas que va a guardar elegirciudades y el resultado filtrado 
+  // context de busquedas que va a guardar elegirciudades y el resultado filtrado
+  const [ color, setColor ] = useState()
   const { elegirCiudades, setElegirCiudades } = useContext(CiudadesContext);
   const { setMostrarCategorias } = useContext(MostrarCategoriasContext);
-
   const manejadorSelect = (event) => {
-    
     // setElegirCiudades(event.label);
     console.log(event.value);
     setElegirCiudades(event.value);
@@ -29,6 +28,7 @@ export const SearchBar = () => {
   // cambiar propiedades de fetch
   return (
     <div className="searchBar">
+      <p className="searchBar-ubicacion">UBICACIÓN</p>
       <Select
         className="searchBar-individual"
         defaultValue={""}
@@ -40,7 +40,15 @@ export const SearchBar = () => {
           }))
         }
         onChange={manejadorSelect}
-        placeholder={<div>Elegí tu ciudad</div>}
+        placeholder={<div className="placeholder">Mendoza</div>}
+        styles={{
+          control: (base, state) => ({
+            ...base,
+
+            border: "none", // default border color
+            boxShadow: "none", // no box-shadow
+          }),
+        }}
       />
     </div>
   );

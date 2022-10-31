@@ -36,6 +36,7 @@
     box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
     display: flex;
     flex-direction: column;
+    padding-bottom: 1rem;
 }
 .listado-unidad:hover {
     box-shadow: 0 1px 4px rgb(0 0 0 / 20%);

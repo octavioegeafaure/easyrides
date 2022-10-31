@@ -24,6 +24,11 @@ function Calendario() {
       
   return (
     <div className="calendario">
+      <div className="calendario-check">
+        <p className="calendario-check-p">Check-in</p>
+        <p className="calendario-check-p">Check-out</p>
+      </div>
+  
       <DateRangePicker
         onChange={setFechasCalendarioPersistencia}
         value={fechasCalendarioPersistencia}

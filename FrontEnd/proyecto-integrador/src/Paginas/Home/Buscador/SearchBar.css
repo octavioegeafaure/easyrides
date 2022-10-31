@@ -1,18 +1,46 @@
 /* falta arreglar esto para mobile */
 .searchBar{
-    margin-top: .5rem;
-    border-radius: 0.5rem;
     width: 400px;
-    border: none;
+    border:  solid ;
+    border-radius: .5rem;
+    border-color:   lightgrey;
+    border-width: 1px;
 }
-@media only screen and (max-width: 1024px){
+.searchBar:active{
+    border-color: black;
+    border-width: 2px;
+}
+.searchBar > p {
+    margin-top: .5rem;
+    margin-bottom: -.2rem;
+    margin-left: .5rem;
+    font-weight: 500;
+}
+.searchBar-individual{
+    margin-bottom: .1rem;
+}
+.css-1okebmr-indicatorSeparator{
+    background-color: white!important;
+}
+.css-tj5bde-Svg{
+    color: white;
+}
+.placeholder{
+    color: black;
+    font-weight: 400;
+}
+.searchBar-ubicacion{
+    color: black;
+    font-size: 12px;
+}
+/* @media only screen and (max-width: 1024px){
     .searchBar {
         margin-top: .5rem;
         border-radius: 0.5rem;
         width: 350px;
         border: none;
     }
-}
+} */
 
 
 

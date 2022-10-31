@@ -30,39 +30,23 @@
 }
 
 .localidad {
-  display: flex;
-  align-items: center;
   margin-left: 2rem;
 }
 
-.valoracion {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-right: 1rem;
-}
-
-.valoracion h2 {
-  background: #31363f;
-  padding: 5px;
-  border-radius: .5rem;
-  color: white;
-}
-
-
 .icons-prod {
-  padding: 10px 0px 0px 10px;
   display: flex;
-  align-items: center;
-  margin-left: 4rem;
   gap: 10px;
+  margin-right: 2rem;
 }
 
 .icons-prod button {
   background: white;
   border: none;
   cursor: pointer;
-  color: #31363f;
+  color: black;
+  display: flex;
+  align-items:center;
+  gap: 10px;
 }
 
 

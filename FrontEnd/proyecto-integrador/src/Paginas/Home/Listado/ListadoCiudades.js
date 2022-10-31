@@ -21,25 +21,34 @@ const ListadoCiudades = () => {
         data.productos.map((prod) => (
           <>
             {prod.ciudad.id == elegirCiudades ? (
-              <div key={prod.id} className="listado-unidad">
-                <img
-                  src={prod.imagenes[0].url}
-                  alt=""
-                  className="cardsProductos-unidad-img"
-                />
-                <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
-                <p className="cardsProductos-unidad-descripcion">
-                  {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
-                </p>
-                <Link
-                  onClick={() => {
-                    setElegirDataPaginaProductos(prod.id);
-                  }}
-                  to={`/producto/${prod.id}`}
-                >
-                  <button className="listado-unidad-boton">Ver Más</button>
-                </Link>
-              </div>
+              <Link
+                onClick={() => {
+                  setElegirDataPaginaProductos(prod.id);
+                }}
+                to={`/producto/${prod.id}`}
+              >
+                <div key={prod.id} className="listado-unidad">
+                  <img
+                    src={prod.imagenes[0].url}
+                    alt=""
+                    className="cardsProductos-unidad-img"
+                  />
+                  <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
+                  <p className="cardsProductos-unidad-descripcion">
+                    {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
+                  </p>
+                 <div className="card-caracteristicas">
+                  {prod.caracteristicas.map((carac) => {
+                    return (
+                      <p key={carac.id}>
+                        <i class={carac.url}></i>
+                      </p>
+                    );
+                  })}
+                </div> 
+                </div>
+                
+              </Link>
             ) : null}
           </>
         ))}

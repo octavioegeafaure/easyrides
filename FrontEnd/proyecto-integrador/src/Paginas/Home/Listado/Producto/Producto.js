@@ -52,21 +52,26 @@ const Producto = () => {
                   {data && data.productos.ciudad.pais}
                 </p>
               </div>
+              <div className="icons-prod">
+                <div>
+                  <button>
+                    <FaShare size={"23"} />
+                    <p>Compartir</p>
+                  </button>
+                </div>
+                <div>
+                  <button>
+                    <AiFillHeart size={"26"} />
+                    <p>Guardar</p>
+                  </button>
+                </div>
+              </div>
             </div>
           </header>
 
           {/*Bloque de galeria y informacion*/}
 
           <section classame="Seccion-Detalle">
-            <div className="icons-prod">
-              <button>
-                <AiFillHeart size={"26"} />
-              </button>
-              <button>
-                <FaShare size={"23"} />
-              </button>
-            </div>
-
             <div className="galeriaImg">
               <a href="#img1" className={"img1"}>
                 <img
@@ -231,7 +236,7 @@ const Producto = () => {
               <div>
                 <div className="politicas">
                   <h2 className="politicas-titulo">
-                  Requisitos para alquilar un carro 
+                    Requisitos para alquilar un carro
                   </h2>
                   <Politicas></Politicas>
                 </div>
