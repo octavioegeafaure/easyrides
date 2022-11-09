@@ -18,8 +18,9 @@ function Login() {
   const [cerrarLogin, setCerrarLogin] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
   const { tokenUsuario, setTokenUsuario } = useContext( TokenUsuarioContext );
-  const urlLogin =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
+  // const urlLogin =
+  //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
+  const urlLogin = "http://localhost:8080/politicas";
 
   
     const getUsuario = (objetoUsuario) => {

@@ -9,7 +9,8 @@ import CalendarioProducto from "./CalendarioProducto";
 import { DataPaginaProductosContext } from "../../../../Context/DataPaginaProductosContext";
 import AuthContext from "../../../../Context/AuthContext";
 import Politicas from "./Politicas.jsx";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 const Producto = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const Producto = () => {
   //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" + id;
   const urlProductos = "http://localhost:8080/productos/" + id;
   // const urlPoliticas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/politicas/listaPoliticas";
-  const urlPoliticas = "http://localhost:8080/politicas/listaPoliticas";
+  const urlPoliticas = "http://localhost:8080/politicas";
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
   const { data } = useFetch(urlProductos );
@@ -27,6 +28,7 @@ const Producto = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
 
   return (
     <div>
@@ -36,7 +38,6 @@ const Producto = () => {
             <div className="header-producto">
               <div>
                 <h2>{data && data.productos.titulo}</h2>
-                <h2></h2>
               </div>
               <Link to="/">
                 <button className="boton-volver">
@@ -73,106 +74,27 @@ const Producto = () => {
 
           <section classame="Seccion-Detalle">
             <div className="galeriaImg">
-              <a href="#img1" className={"img1"}>
-                <img
-                  src={data && data.productos.imagenes[0].url}
-                  alt="Imagen1"
-                ></img>
-              </a>
-              <a href="#img2" className={"img2"}>
-                <img
-                  src={data && data.productos.imagenes[1].url}
-                  alt="Imagen2"
-                ></img>
-              </a>
-              <a href="#img3" className={"img3"}>
-                <img
-                  src={data && data.productos.imagenes[2].url}
-                  alt="Imagen3"
-                ></img>
-              </a>
-
-              <a href="#img4" className={"img4"}>
-                <img
-                  src={data && data.productos.imagenes[3].url}
-                  alt="Imagen4"
-                ></img>
-              </a>
-
-              <a href="#img5" className={"img5"}>
-                <img
-                  src={data && data.productos.imagenes[4].url}
-                  alt="Imagen5"
-                ></img>
-              </a>
-
-              <article className="light-box" id="img1">
-                <a href="#img5" className="next">
-                  {" "}
-                  <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                <img
-                  src={data && data.productos.imagenes[0].url}
-                  alt="Imagen1"
-                ></img>
-                <a href="#img2" className="next">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="#" className="close">
-                  X
-                </a>
-              </article>
-
-              <article className="light-box" id="img2">
-                <a href="#img1" className="next">
-                  {" "}
-                  <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                <img
-                  src={data && data.productos.imagenes[1].url}
-                  alt="Imagen2"
-                ></img>
-                <a href="#img3" className="next">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="#" className="close">
-                  X
-                </a>
-              </article>
-
-              <article className="light-box" id="img3">
-                <a href="#img2" className="next">
-                  {" "}
-                  <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                <img
-                  src={data && data.productos.imagenes[2].url}
-                  alt="Imagen2"
-                ></img>
-                <a href="#img4" className="next">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="#" className="close">
-                  X
-                </a>
-              </article>
-
-              <article className="light-box" id="img4">
-                <a href="#img3" className="next">
-                  {" "}
-                  <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                <img
-                  src={data && data.productos.imagenes[3].url}
-                  alt="Imagen2"
-                ></img>
-                <a href="#img5" className="next">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="#" className="close">
-                  X
-                </a>
-              </article>
+              <Carousel width="700px" className="imagen">
+                <div>
+                  <img
+                    src={data && data.productos.imagenes[0].url}
+                    alt="Imagen1"
+                  />
+                </div>
+                <div>
+                  <img src={data && data.productos.imagenes[1].url} />
+                </div>
+                <div>
+                  <img src={data && data.productos.imagenes[2].url} />
+                </div>
+                <div>
+                  <img src={data && data.productos.imagenes[3].url} />
+                </div>
+                <div>
+                  <img src={data && data.productos.imagenes[4].url} />
+                </div>
+              </Carousel>
+              
 
               <article className="light-box" id="img5">
                 <a href="#img4" className="next">
@@ -238,7 +160,7 @@ const Producto = () => {
                   <h2 className="politicas-titulo">
                     Requisitos para alquilar un carro
                   </h2>
-                  <Politicas></Politicas>
+                  <Politicas />
                 </div>
               </div>
             </article>

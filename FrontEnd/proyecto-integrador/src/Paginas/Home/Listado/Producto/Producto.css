@@ -56,12 +56,14 @@
 
 .galeriaImg {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  /* grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr); */
   padding: 10px 70px 0px 70px;
   gap: .5rem;
 }
-
+.carousel.carousel-slider{
+  border-radius: .5rem;
+}
 img {
   width: 100%;
   overflow: hidden;
@@ -71,7 +73,12 @@ img {
   transition: transform 0.3s;
 
 }
-
+.carousel .thumb{
+  border-radius: .5rem;
+}
+.carousel .thumb img{
+    border-radius: .3rem;
+  }
 .galeriaImg>a {
   display: block;
   position: relative;
@@ -197,7 +204,7 @@ img {
 
 .cuerpo-descripcion {
   /*Parrafo: Descripcion del carro */
-  padding: 0rem 5rem 0rem 0rem;
+  width: 700px;
   margin-top: 1rem;
   line-height: 1.5rem;
   text-align: justify;

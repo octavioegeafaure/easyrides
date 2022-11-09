@@ -15,25 +15,28 @@ export default function Cards() {
   
   return (
     <div>
-      <h2 className="cardsCategoria-titulo">Busca por categorías</h2>
+      <h2 className="cardsCategoria-titulo">
+        Autos en alquiler para todos los estilos
+      </h2>
+      <h4 className="cardsCategoria-subtitulo">
+        Conseguí el auto que necesitás.
+      </h4>
       <div className="cardsCategoria">
         {data &&
           data.categorias.map((cat) => (
             <div
-              
               key={cat.id}
               className="cardsCategoria-unidad"
-              onClick={
-                () => {setMostrarCategorias(true) ;setElegirCategorias(cat.titulo); setDataProductos(false) }
-              }
+              onClick={() => {
+                setMostrarCategorias(true);
+                setElegirCategorias(cat.titulo);
+                setDataProductos(false);
+              }}
             >
-              <img
-                src={cat.url}
-                alt=""
-                className="cardsCategoria-unidad-img"
-                
-              />
+              <img src={cat.url} alt="" className="cardsCategoria-unidad-img" />
+
               <p className="cardsCategoria-unidad-nombre">{cat.titulo}</p>
+              <p className="cardsCategoria-unidad-descripcion">{cat.descripcion}</p>
             </div>
           ))}
       </div>
