@@ -94,7 +94,6 @@ const Producto = () => {
                   <img src={data && data.productos.imagenes[4].url} />
                 </div>
               </Carousel>
-              
 
               <article className="light-box" id="img5">
                 <a href="#img4" className="next">
@@ -186,15 +185,18 @@ const Producto = () => {
             </div>
 
             <div className="contenedor-IniciarReserva">
+              <h4>Conseguí lo que necesitás</h4>
+              <p>
+                Esta propiedad está en el corazón de {data && data.productos.ciudad.nombre} y
+                tiene una puntuación excelente
+              </p>
               <p>
                 Elegi las fechas que necesites tu vehiculo y comenza con la
                 aventura!
               </p>
               {/* {auth ? ( */}
               <Link to={`/producto/${id}/reservas`}>
-                <button className="IniciarReserva-boton">
-                  Iniciar Reserva
-                </button>
+                <button className="IniciarReserva-boton">Reservá ahora</button>
               </Link>
               {/* ) : (
                 <Link to={`/login`}>

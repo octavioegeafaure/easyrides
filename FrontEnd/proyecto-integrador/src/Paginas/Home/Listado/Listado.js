@@ -24,22 +24,23 @@ export default function Listado() {
 
   return (
     <div className="listado-container">
-      <p className="cardsProductos-titulo">Recomendaciones</p>
+      <p className="cardsProductos-titulo">
+        Vehículos con las mejores calificaciones
+      </p>
+      <h4 className="cardsCategoria-subtitulo">
+        Los clientes están de acuerdo: estos vehículos tienen excelentes
+        calificaciones por su calidad y precio, entre otros aspectos.
+      </h4>
       <div>
         {/* // if comun si a es verdadero y b y c es false va a y ciudades */}
         {(() => {
           if (!mostrarCategorias && !dataProductos) {
-            return (
-              <ListadoDefault />
-            );
-          } 
-          else if (dataProductos ) {
+            return <ListadoDefault />;
+          } else if (dataProductos) {
             return <ListadoCiudades />;
-          } 
-          else if (dataProductos ) {
+          } else if (dataProductos) {
             return <ListadoFechas />;
-          } 
-          else if (mostrarCategorias) {
+          } else if (mostrarCategorias) {
             return <ListadoCategorias />;
           }
         })()}

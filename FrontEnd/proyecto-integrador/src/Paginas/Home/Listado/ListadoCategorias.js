@@ -24,32 +24,33 @@ const ListadoCategorias = () => {
           <>
             {prod.categoria.titulo == elegirCategorias ? (
               <Link
-                  onClick={() => {
-                    setElegirDataPaginaProductos(prod.id);
-                  }}
-                  to={`/producto/${prod.id}`}
-                >
-              <div className="listado-unidad" key={prod.id}>
-                <img
-                  src={prod.imagenes[0].url}
-                  alt=""
-                  className="cardsProductos-unidad-img"
-                  key={prod.id}
-                />
-                <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
-                <p className="cardsProductos-unidad-descripcion">
-                  {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
-                </p>
-                <div className="card-caracteristicas">
-                  {prod.caracteristicas.map((carac) => {
-                    return (
-                      <p key={carac.id}>
-                        <i class={carac.url}></i>
-                      </p>
-                    );
-                  })}
+                onClick={() => {
+                  setElegirDataPaginaProductos(prod.id);
+                }}
+                to={`/producto/${prod.id}`}
+              >
+                <div className="listado-unidad" key={prod.id}>
+                  <img
+                    src={prod.imagenes[0].url}
+                    alt=""
+                    className="cardsProductos-unidad-img"
+                    key={prod.id}
+                  />
+                  <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
+                  <p className="cardsProductos-unidad-descripcion">
+                    {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
+                  </p>
+                  <p>{prod.descripcion.substring(0, 150)...}</p>
+                  <div className="card-caracteristicas">
+                    {prod.caracteristicas.map((carac) => {
+                      return (
+                        <p key={carac.id}>
+                          <i class={carac.url}></i>
+                        </p>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
               </Link>
             ) : null}
           </>
