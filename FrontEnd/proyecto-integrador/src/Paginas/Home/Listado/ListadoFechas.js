@@ -12,7 +12,12 @@ const ListadoFechas = () => {
   const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
   const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
   const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/"+elegirCiudades+"/"+fechaInicio+"/"+fechaFin;
+    "http://localhost:8080/productos" +
+    elegirCiudades +
+    "/" +
+    fechaInicio +
+    "/" +
+    fechaFin;
   const { data } = useFetch(urlProductos);
   const { setElegirDataPaginaProductos } = useContext(
     DataPaginaProductosContext
@@ -34,6 +39,7 @@ const ListadoFechas = () => {
                 <p className="cardsProductos-unidad-descripcion">
                   {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                 </p>
+                <p>{prod.descripcion.substring(0, 100)}...</p>
                 <Link
                   onClick={() => {
                     setElegirDataPaginaProductos(prod.id);

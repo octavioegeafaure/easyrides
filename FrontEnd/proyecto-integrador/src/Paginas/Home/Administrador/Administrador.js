@@ -16,13 +16,10 @@ function Administrador(){
   // const { tokenUsuario, setTokenUsuario } = useContext(TokenUsuarioContext);
 
   const { auth, setAuth } = useContext(AuthContext);
-  const urlCrearProducto =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
-  const urlCiudades =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades";
-  const urlCategorias =
-      "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
-  const urlCaracteristicas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/caracteristicas"
+  const urlCrearProducto = "http://localhost:8080/productos";
+  const urlCiudades = "http://localhost:8080/ciudades";
+  const urlCategorias = "http://localhost:8080/categorias";
+  const urlCaracteristicas = "http://localhost:8080/caracteristicas";
   
   const { data } = useFetch(urlCiudades);
   const { data: dataCategorias } = useFetch(urlCategorias)

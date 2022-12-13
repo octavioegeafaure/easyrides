@@ -78,9 +78,11 @@
 
 
 }
-.reserva-horario-select{
+
+.reserva-horario-select {
     margin-top: 1rem;
 }
+
 .reserva-superior-formulario-linea1>p {
     /* margin: 0rem 0rem 2rem 0rem; */
     margin-bottom: .5rem;
@@ -166,9 +168,11 @@
     margin: 1rem 2rem;
     width: 45rem;
 }
+
 .reserva-horario-select {
     margin-bottom: 1rem;
 }
+
 .reserva-inferior {
     margin-left: 2rem;
     margin-bottom: 2rem;
@@ -207,6 +211,7 @@
         margin-left: 200px;
     }
 }
+
 @media only screen and (max-width: 913px) {
     .reserva-superior-detalle {
         width: 48vw;
@@ -214,11 +219,13 @@
         margin-left: 185px;
     }
 }
+
 @media only screen and (max-width: 910px) {
     .reserva-superior-detalle {
         margin-left: 195px;
     }
 }
+
 @media only screen and (max-width: 826px) {
     .reserva-superior-detalle {
         width: 50vw;
@@ -234,6 +241,7 @@
         margin-left: 190px;
     }
 }
+
 @media only screen and (max-width: 740px) {
     .reserva-superior-detalle {
         width: 60vw;

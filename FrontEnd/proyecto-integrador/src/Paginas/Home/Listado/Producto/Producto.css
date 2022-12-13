@@ -55,130 +55,68 @@
 ---------------------------------------------------------------*/
 
 .galeriaImg {
-  display: grid;
   /* grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr); */
   padding: 10px 70px 0px 70px;
   gap: .5rem;
+  display: flex;
+}
+.imagen{
+  width: 80%;
 }
 .carousel.carousel-slider{
   border-radius: .5rem;
 }
-img {
-  width: 100%;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.3s;
 
-}
 .carousel .thumb{
   border-radius: .5rem;
 }
 .carousel .thumb img{
     border-radius: .3rem;
-  }
-.galeriaImg>a {
-  display: block;
-  position: relative;
-  overflow: hidden;
 }
+.reservaProductos {
+  /*Container de la seccion*/
+  margin-top: 2rem;
+  border-radius: .5rem;
+  width: 10rem;
+}
+.contenedor-IniciarReserva {
+  /*contenedor donde va el calendario Y el container del boton iniciar reserva*/
+  position: sticky;
+  top: 15vh;
+  align-self: flex-start;
+  border-radius: .5rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+  padding: 2rem 2rem;
+  z-index: 99;
+  width: 250%;
 
-.img1 {
-  grid-area: 1 / 1 / 3 / 3;
-  border-bottom-left-radius: 1rem;
-  border-top-left-radius: 1rem;
 }
-.img1:hover {
-  filter: brightness(0.7);
-  transform: rotatey(10deg)
+.contenedor-IniciarReserva-titulo{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
-.img2 {
-  grid-area: 1 / 3 / 2 / 4;
+.contenedor-IniciarReserva-titulo-p{
+  margin-bottom: .5rem;
+  
 }
-.img2:hover {
-  filter: brightness(0.7);
-  transform: rotatey(10deg)
-}
-.img3 {
-  grid-area: 1 / 4 / 2 / 5;
-  border-top-right-radius: 1rem;
-}
-.img3:hover {
-  filter: brightness(0.7);
-  transform: rotatey(10deg)
-}
-.img4 {
-  grid-area: 2 / 3 / 3 / 4;
-}
-.img4:hover {
-  filter: brightness(0.7);
-  transform: rotatey(10deg)
-}
-.img5 {
-  grid-area: 2 / 4 / 3 / 5;
-  border-bottom-right-radius: 1rem;
-}
-.img5:hover {
-  filter: brightness(0.7);
-  transform: rotatey(10deg)
-}
-/*------------------------------------------*/
-
-.light-box {
-  /*Creo que habra q modificar tamaño*/
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
+.contenedor-IniciarReserva button {
+  background: #000;
+  border-radius: .5rem;
   width: 100%;
-  height: 100vh;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0);
-  backdrop-filter: blur(20px)
-}
-
-.light-box img {
-  width: 75vw;
-  max-height: 70vh;
-}
-
-.light-box:target {
-  transform: scale(1)
-}
-
-.close{
-  display: block;
-  position:absolute;
-  top:40px;
-  right:40px;
+  padding: 1rem;
+  background-color: #F0572D;
   color: white;
-  background-color: #f0572dd3;
-  width: 40px;
-  height:40px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
+  border: solid 1px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 1rem;
 }
 
-
-.next {
-  display: block;
-  color: white;
-  background-color: #f0572dd3;
-  width: 30px;
-  height: 30px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 30px;
+.IniciarReserva-boton {
+  cursor: pointer; 
 }
-
-
 /*---------------------------------------------------------------
               Comienzan las secciones de información
 ---------------------------------------------------------------*/
@@ -187,9 +125,12 @@ img {
 
 .cuerpo-contenedor {
   /*Container de la seccion*/
-  margin-left: 4.2rem;
-}
 
+  display: block;
+}
+.Seccion1{
+  display: block;
+}
 .cuerpo-titulo {
   /*Titulo: Nombre del carro */
   font-weight: 600;
@@ -204,7 +145,7 @@ img {
 
 .cuerpo-descripcion {
   /*Parrafo: Descripcion del carro */
-  width: 700px;
+  width: 60%;
   margin-top: 1rem;
   line-height: 1.5rem;
   text-align: justify;
@@ -214,7 +155,7 @@ img {
 
 .caracteristicas {
   margin-top: 2rem;
-  margin-left: 4rem;
+
 }
 
 .caracteristicas-titulo {
@@ -229,7 +170,6 @@ img {
 /*----> Articulo que politicas del auto <----*/
 .politicas {
   margin-top: 2rem;
-  margin-left: 4rem;
 }
 
 .politicas-titulo {
@@ -247,7 +187,7 @@ img {
 
 .seleccionaFecha{
   margin-top: 2rem;
-  margin-left: 4rem;
+
 }
 
 .seleccionaFecha-titulo{
@@ -267,69 +207,24 @@ img {
 /*---------------------------------------------------------------
                         Seccion de reserva
 ---------------------------------------------------------------*/
-.reservaProductos {
-  /*Container de la seccion*/
-  display: flex;
-  margin-top: 2rem;
-  gap: 18rem;
-}
+
 
 
 .calendarioInteractivo {
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 4rem;
   padding: 5px;
   border-radius: 5px;
   border-style: none;
   border: none;
   cursor: pointer;
   border: none;
-  width: 38rem;
-  
+  width: 80%;
 }
 
 /*----> 2 DIV <----*/
 
-.contenedor-IniciarReserva {
-  /*contenedor donde va el calendario Y el container del boton iniciar reserva*/
-  background-color: #ffff;
-  border: 3px solid transparent;
-  border-radius: .5rem;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
-  color: black;
-  border-radius: 5px;
-  width: 25vw;
-  position: sticky;
-  height: 18rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-
-}
-.contenedor-IniciarReserva > h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 1.8rem;
-}
-
-.contenedor-IniciarReserva button {
-  background: #000;
-  border-radius: .5rem;
-  padding: 1rem;
-  width: 100%;
-  background-color: #F0572D;
-  color: white;
-  border: solid 1px;
-  font-size: 16px;
-  font-weight: 500;
-  margin-top: 1rem;
-}
-
-.IniciarReserva-boton {
-  cursor: pointer; 
-}
 
 
 
@@ -343,19 +238,14 @@ img {
 @media only screen and (max-width: 1200px) { 
 
   /*HAY QUE MODIFICAR LA IMAGEN GRANDE PARA QUE QUEDE EN LA PARTE DE ARRIBA
-  .galeriaImg {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    padding: 10px 70px 0px 70px;
-    gap: .5rem;*/
+
 
     .reservaProductos {
       /*Container de la seccion*/
       
-      flex-direction: column;
+      /* flex-direction: column; */
     
-    }
+    /* } */
     .contenedor-calendario{
       width:900px;
     }
@@ -363,16 +253,14 @@ img {
     .calendarioInteractivo {
       margin: 0 auto; 
     }
-
-    .contenedor-IniciarReserva {
-      margin-top: 40px; 
-      margin-bottom: 40px;
-    }
   }
 
-  @media only screen and (max-width: 700px) { 
+  @media only screen and (max-width: 750px) { 
     .contenedor-calendario{
       width:800px;
+    }
+    .galeriaImg{
+      display: block;
     }
   }
 

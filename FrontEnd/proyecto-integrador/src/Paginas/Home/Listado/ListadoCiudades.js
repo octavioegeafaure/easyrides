@@ -37,17 +37,17 @@ const ListadoCiudades = () => {
                   <p className="cardsProductos-unidad-descripcion">
                     {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                   </p>
-                 <div className="card-caracteristicas">
-                  {prod.caracteristicas.map((carac) => {
-                    return (
-                      <p key={carac.id}>
-                        <i class={carac.url}></i>
-                      </p>
-                    );
-                  })}
-                </div> 
+                  <p>{prod.descripcion.substring(0, 100)}...</p>
+                  <div className="card-caracteristicas">
+                    {prod.caracteristicas.map((carac) => {
+                      return (
+                        <p key={carac.id}>
+                          <i class={carac.url}></i>
+                        </p>
+                      );
+                    })}
+                  </div>
                 </div>
-                
               </Link>
             ) : null}
           </>

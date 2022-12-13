@@ -20,9 +20,7 @@ function Login() {
   const { tokenUsuario, setTokenUsuario } = useContext( TokenUsuarioContext );
   // const urlLogin =
   //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
-  const urlLogin = "http://localhost:8080/politicas";
-
-  
+  const urlLogin = "http://localhost:8080/auth/login";
     const getUsuario = (objetoUsuario) => {
     axios({
       method: "post",
@@ -39,7 +37,7 @@ function Login() {
         // localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
-        navigate("/");
+        navigate("/");  
       })
       .catch(function (response) {
         navigate("/login");
@@ -63,12 +61,9 @@ function Login() {
         email: "",
         password: "",
       }}
-      
       onSubmit={(values, onSubmitProps) => {
-        
         getUsuario(values);
       }}
-
       validate={(valores) => {
         let errores = {};
 
@@ -88,26 +83,20 @@ function Login() {
         if (!valores.password) {
           errores.password = "Por favor ingresa tu contraseña";
         } else if (!/^.{4,12}$/.test(valores.password)) {
-          errores.password = "Por favor ingrese una contraseña de 4 a 12 caracteres";
+          errores.password =
+            "Por favor ingrese una contraseña de 4 a 12 caracteres";
         }
         return errores;
 
         // crear validacion logeo
-
-        
-
-
-        
       }}
-      
-
     >
       {({ errors }) => (
         <div className="contenedor">
           <Form className="formulario">
-            <h1 className="Titulo-Login">Iniciar sesión</h1>
+            <h1 className="Titulo-Login titulo">Iniciá sesión</h1>
 
-            <div>
+            <div className="seccion1 login">
               <label htmlFor="correo">Correo electrónico</label>
               <Field
                 type="email"
@@ -137,9 +126,12 @@ function Login() {
 
             <div className="Buttom">
               <button type="submit">Ingresar</button>
-              <p className="registrate">
+              <p className="">
                 {" "}
-                ¿Aún no tienes cuenta? <Link to="/registro">Registrate</Link>
+                ¿Aún no tienes cuenta?{" "}
+                <Link to="/registro" className="registrate">
+                  Registrate
+                </Link>
               </p>
             </div>
           </Form>

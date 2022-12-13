@@ -23,7 +23,7 @@ export const BotonesLoginRegister = () => {
                 <button
                   className="header-derecha-boton cuenta"
                 >
-                  Crear Cuenta
+                  Registrate
                 </button>
               </Link>
             </>
@@ -31,19 +31,19 @@ export const BotonesLoginRegister = () => {
   
     default:
         return (
-            <>
-              <Link to="/login">
-                <button className="header-derecha-boton sesion">
-                  Iniciar Sesión
-                </button>
-              </Link>
-              <Link to="/registro">
-                <button className="header-derecha-boton cuenta">
-                  Crear Cuenta
-                </button>
-              </Link>
-            </>
-          );
+          <>
+            <Link to="/login">
+              <button className="header-derecha-boton sesion">
+                Iniciar Sesión
+              </button>
+            </Link>
+            <Link to="/registro">
+              <button className="header-derecha-boton cuenta">
+                Registrate
+              </button>
+            </Link>
+          </>
+        );
   }
 };
 

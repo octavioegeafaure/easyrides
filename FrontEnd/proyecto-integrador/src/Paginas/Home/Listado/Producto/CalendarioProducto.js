@@ -19,10 +19,7 @@ function CalendarioProducto() {
   const [fechaInicioDisabled, setFechaInicioDisabled] = useState();
   const [fechaFinDisabled, setFechaFinDisabled] = useState();
   const { id } = useParams();
-  const urlReservas =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" +
-    id +
-    "/reservas";
+  const urlReservas = "http://localhost:8080/" + id + "/reservas";
   const { data } = useFetch(urlReservas);
  
   const disabledDates = [

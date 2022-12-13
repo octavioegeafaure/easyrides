@@ -40,7 +40,7 @@ const ListadoCategorias = () => {
                   <p className="cardsProductos-unidad-descripcion">
                     {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                   </p>
-                  <p>{prod.descripcion.substring(0, 150)...}</p>
+                  <p>{prod.descripcion.substring(0, 100)}...</p>
                   <div className="card-caracteristicas">
                     {prod.caracteristicas.map((carac) => {
                       return (

@@ -6,32 +6,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
+
 }
 /*CUANDO SELECCIONAS UNA CATEGORIA*/
 
 /*-----------------------------------------*/
-.card-caracteristicas{
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 1rem;
-    padding-top: 0.6rem;
-    padding-bottom: 0.3rem;
-}
-.card-caracteristicas p{
-    margin: 0;
-    margin-right: 1rem;
-}
+
 .cardsProductos-titulo {
     font-size: 30px;
     font-weight: 600;
     margin-left: 3.8rem;
-    padding-top: 2rem;
+    margin-top: 2rem;
     color: black;
 }
 .listado-unidad {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
 }
 .cardsProductos-unidad-img {
     width: 100%;
@@ -43,6 +33,8 @@
 .cardsProductos-unidad-descripcion {
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .listado-unidad-nombre{
@@ -50,15 +42,17 @@
     font-weight: 600;
     margin-top: 1rem;
 }
-.cardsProductos-unidad-boton:hover,
-.cardsProductos-unidad-boton:focus {
-    background-color: rgb(177, 175, 175);
-    transition: 0.3s;
+.card-caracteristicas{
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 0.6rem;
 }
+.card-caracteristicas p{
+    margin-right: 1rem;
 
+}
 @media only screen and (max-width: 650px) {
     .cardsProductos {
-        padding: 40px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
@@ -66,7 +60,6 @@
     }
     .cardsProductos-categoria{
         width: 84vw;
-        padding: 3px;
         justify-content: space-between;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -13,11 +13,8 @@ import Select from "react-select";
 const Reservas = () => {
   const { id } = useParams();
   // pasar id a la url de fetch
-  const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" +
-    id;
-  const urlReservas =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/reservas";
+  const urlProductos = "http://localhost:8080/productos/" + id;
+  const urlReservas = "http://localhost:8080/reservas";
   const { data } = useFetch(urlProductos);
   // const { fechasCalendario } = useContext( FechasCalendarioContext )
   const { auth, setAuth } = useContext(AuthContext);
@@ -49,21 +46,21 @@ const Reservas = () => {
         Authorization: `Bearer ${auth.token}`,
       },
     })
-      .then(function(response) {
+      .then(function (response) {
         //handle success
         console.log(response);
       })
-      .catch(function(response) {
+      .catch(function (response) {
         //handle error
         console.log(response);
       });
   };
-const valoresHorarios = [
-  { label: "8:00 a 12:00", value: "8:00 a 12:00" },
-  { label: "12:00 a 16:00", value: "12:00 a 16:00" },
-  { label: "16:00 a 20:00", value: "16:00 a 20:00" },
-];
-const handleHorarios = () => {};
+  const valoresHorarios = [
+    { label: "8:00 a 12:00", value: "8:00 a 12:00" },
+    { label: "12:00 a 16:00", value: "12:00 a 16:00" },
+    { label: "16:00 a 20:00", value: "16:00 a 20:00" },
+  ];
+  const handleHorarios = () => {};
   return (
     <div className="reserva">
       <h2>Solicitá tu reserva</h2>

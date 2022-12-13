@@ -9,9 +9,9 @@ import axios from "axios";
 function Registro() {
   const { valores, setValores } = useContext(AppContext);
   const navigate = useNavigate();
-  const urlRegistro =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/register";
-
+  // const urlRegistro =
+  //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/register";
+  const urlRegistro = "http://localhost:8080/auth/register";
   //validacion contraseña
   const validarContraseña = (values) => {
     let error = "";
@@ -54,7 +54,7 @@ function Registro() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Formik
         initialValues={{
           nombre: "",
@@ -102,105 +102,109 @@ function Registro() {
               "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.";
           }
 
-   
           return errores;
         }}
       >
         {({ errors, values }) => (
-          <Form className="form">
-            <h1 className="form-titulo">Crear cuenta</h1>
-
-            <div className="seccion1">
-              <div className="form-nombre">
-                <label htmlFor="nombre">Nombre</label>
-                <Field type="text" name="nombre" placeholder="" id="nombre" />
-                <ErrorMessage
-                  name="nombre"
-                  component={() => <div className="error">{errors.nombre}</div>}
-                />
-              </div>
-
-              <div className="form-apellido">
-                <label htmlFor="apellido">Apellido</label>
-                <Field
-                  type="text"
-                  name="apellido"
-                  placeholder=""
-                  id="apellido"
-                />
-                <ErrorMessage
-                  name="apellido"
-                  component={() => (
-                    <div className="error">{errors.apellido}</div>
-                  )}
-                />
-              </div>
-            </div>
-
-            <div className="seccion2">
-              <div className="form-correo">
-                <label htmlFor="correo electrónico">Correo electrónico</label>
-                <Field
-                  type="email"
-                  name="email"
-                  placeholder="Ej: correo@correo.com"
-                  id="email"
-                />
-                <ErrorMessage
-                  name="email"
-                  component={() => <div className="error">{errors.email}</div>}
-                />
-
-                <div className="form-contraseña">
-                  <label htmlFor="contraseña">Contraseña</label>
-                  <Field
-                    type="password"
-                    name="password"
-                    validate={validarContraseña}
+          <div className="contenedor">
+            <Form className="formulario">
+              <h4 className="Titulo-Login">Registráte</h4>
+              <div className="seccion1">
+                <div className="form-nombre">
+                  <label htmlFor="nombre">Nombre</label>
+                  <Field type="text" name="nombre" placeholder="" id="nombre" />
+                  <ErrorMessage
+                    name="nombre"
+                    component={() => (
+                      <div className="error">{errors.nombre}</div>
+                    )}
                   />
                 </div>
 
-                <ErrorMessage
-                  name="password"
-                  component={() => (
-                    <div className="error">{errors.password}</div>
-                  )}
-                />
-
-                <div className="form-contraseña">
-                  <label htmlFor="contraseña2">Confirmar contraseña</label>
+                <div className="form-apellido">
+                  <label htmlFor="apellido">Apellido</label>
                   <Field
-                    type="password"
-                    name="confirmarContraseña"
-                    validate={(value) =>
-                      validateConfirmarContraseña(values.password, value)
-                    }
+                    type="text"
+                    name="apellido"
+                    placeholder=""
+                    id="apellido"
                   />
                   <ErrorMessage
-                    name="confirmarContraseña"
+                    name="apellido"
                     component={() => (
-                      <div className="error">{errors.confirmarContraseña}</div>
+                      <div className="error">{errors.apellido}</div>
                     )}
                   />
                 </div>
               </div>
-            </div>
 
-            <div className="Buttom">
-              <button type="submit">Crear cuenta</button>
-              <p className="ParrafoTienesCuenta">
-                {" "}
-                ¿Ya tienes cuenta?{" "}
-                <Link to="/login" >
-                  Iniciar sesión
-                </Link>
-              </p>
-            </div>
-          </Form>
+              <div className="seccion2">
+                <div className="form-correo">
+                  <label htmlFor="correo electrónico">Correo electrónico</label>
+                  <Field
+                    type="email"
+                    name="email"
+                    placeholder="Ej: correo@correo.com"
+                    id="email"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component={() => (
+                      <div className="error">{errors.email}</div>
+                    )}
+                  />
+
+                  <div className="form-contraseña">
+                    <label htmlFor="contraseña">Contraseña</label>
+                    <Field
+                      type="password"
+                      name="password"
+                      validate={validarContraseña}
+                    />
+                  </div>
+
+                  <ErrorMessage
+                    name="password"
+                    component={() => (
+                      <div className="error">{errors.password}</div>
+                    )}
+                  />
+
+                  <div className="form-contraseña">
+                    <label htmlFor="contraseña2">Confirmar contraseña</label>
+                    <Field
+                      type="password"
+                      name="confirmarContraseña"
+                      validate={(value) =>
+                        validateConfirmarContraseña(values.password, value)
+                      }
+                    />
+                    <ErrorMessage
+                      name="confirmarContraseña"
+                      component={() => (
+                        <div className="error">
+                          {errors.confirmarContraseña}
+                        </div>
+                      )}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="Buttom">
+                <button type="submit">Crear cuenta</button>
+                <p className="ParrafoTienesCuenta">
+                  {" "}
+                  ¿Ya tienes cuenta? <Link to="/login">Iniciar sesión</Link>
+                </p>
+              </div>
+            </Form>
+          </div>
         )}
       </Formik>
-    </React.Fragment>
+    </>
   );
+  
 }
 
 export default Registro;
