@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./Producto.css";
-import { FaShare } from "react-icons/fa";
+import { FaShare, } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiFillHeart } from "react-icons/ai";
 import { Link, useParams } from "react-router-dom";
@@ -14,6 +14,7 @@ import { Carousel } from "react-responsive-carousel";
 import { SolicitarReserva } from "./SolicitarReserva";
 
 const Producto = () => {
+  
   const { id } = useParams();
   // pasar id a la url de fetch
   // const urlProductos =
@@ -41,6 +42,7 @@ const Producto = () => {
           <Link to="/">
             <button className="boton-volver">
               <MdOutlineArrowBackIos size={"30"} />
+              
             </button>
           </Link>
         </div>

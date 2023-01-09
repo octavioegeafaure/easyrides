@@ -10,6 +10,7 @@ import AuthContext from "../../Context/AuthContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Select from "react-select";
+
 const Reservas = () => {
   const { id } = useParams();
   // pasar id a la url de fetch
@@ -21,12 +22,18 @@ const Reservas = () => {
   const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
   const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
   const [submitForm, setSubmitForm] = useState(false);
+  const [ elegirHorario, setElegirHorario ] = useState()
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+    const valoresHorarios = [
+    { label: "8:00 a 12:00", value: "8:00 a 12:00" },
+    { label: "12:00 a 16:00", value: "12:00 a 16:00" },
+    { label: "16:00 a 20:00", value: "16:00 a 20:00" },
+  ];
   const infoPostReserva = {
-    horaInicio: "",
+    horaInicio: elegirHorario,
     fechaInicial: fechaInicio,
     fechaFinal: fechaFin,
     producto: {
@@ -55,12 +62,10 @@ const Reservas = () => {
         console.log(response);
       });
   };
-  const valoresHorarios = [
-    { label: "8:00 a 12:00", value: "8:00 a 12:00" },
-    { label: "12:00 a 16:00", value: "12:00 a 16:00" },
-    { label: "16:00 a 20:00", value: "16:00 a 20:00" },
-  ];
-  const handleHorarios = () => {};
+
+  const handleHorarios = (event) => {
+    setElegirHorario(event.value)
+  };
   return (
     <div className="reserva">
       <h2>Solicitá tu reserva</h2>
@@ -178,7 +183,7 @@ const Reservas = () => {
                       <div className="error">{errors.ciudad}</div>
                     )}
                   />
-                </div>
+                </div>                
               </Form>
             )}
           </Formik>

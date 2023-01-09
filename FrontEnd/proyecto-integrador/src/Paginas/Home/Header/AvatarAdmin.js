@@ -11,8 +11,11 @@ export const AvatarAdmin = () => {
   };
   return (
     <div className="avatar">
+      <Link to="/usuarios/:id/reservas" className="avatar-reservas">
+        Mis Reservas
+      </Link>
       <Link to="/admin" className="avatar-nombre">
-       Administrador
+        Administrador
       </Link>
       <button className="avatar-sesion" onClick={() => cerrarSesion()}>
         Cerrar Sesion

@@ -33,7 +33,7 @@ function Login() {
         setAuth(response.data)
         console.log(response.data);
         setTokenUsuario(response.data.token)
-        console.log(tokenUsuario);
+        // console.log(tokenUsuario);
         // localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
@@ -94,7 +94,7 @@ function Login() {
       {({ errors }) => (
         <div className="contenedor">
           <Form className="formulario">
-            <h1 className="Titulo-Login titulo">Iniciá sesión</h1>
+            <h1 className="Titulo-Login ">Iniciá sesión</h1>
 
             <div className="seccion1 login">
               <label htmlFor="correo">Correo electrónico</label>

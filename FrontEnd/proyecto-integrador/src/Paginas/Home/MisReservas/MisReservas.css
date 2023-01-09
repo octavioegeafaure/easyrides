@@ -1,0 +1,70 @@
+.misReservas{
+    height: 100vh;
+}
+.titulo{
+    margin-left: 4rem;
+    margin-top: 1rem;
+}
+.misReservas-cajaReservas{
+    padding: 1rem 1rem;
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    /* margin-right: 2rem; */
+    border-radius: .5rem;
+
+}
+.misReservas-cajaReservas > img{
+    border-radius: 1rem;
+    width: 15rem;
+}
+.misReservas-cajaReservas-izquierda{
+    margin-left: 4rem;
+    padding-right: 3rem;
+    border-right: solid 1px#d4d0d1;
+}
+.misReservas-cajaReservas-nombre{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: .4rem;
+}
+.ciudad{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+}
+.misReservas-cajaReservas-ciudad{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: .1rem;
+}
+.misReservas-cajaReservas-fechas{
+    margin-left: 2rem;
+    padding-right: 3rem;
+    border-right: solid 1px#d4d0d1;
+}
+.fechaDeReserva{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: .4rem;
+    margin-top: 2rem;
+}
+.fechas{
+    display: flex;
+    margin-top: .4rem;
+}
+.fechaFinal{
+    margin-left: .4rem;
+}
+.horario{
+    margin-left: 2rem;
+    border-right: solid 1px#d4d0d1;
+    padding-right: 3rem;
+}
+.horarioDeReserva{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: .4rem;
+    margin-top: 2rem;
+}

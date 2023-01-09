@@ -31,7 +31,7 @@ export const BotonesLoginRegister = () => {
   
     default:
         return (
-          <>
+          <div className="botones-registro">
             <Link to="/login">
               <button className="header-derecha-boton sesion">
                 Iniciar Sesión
@@ -42,7 +42,7 @@ export const BotonesLoginRegister = () => {
                 Registrate
               </button>
             </Link>
-          </>
+          </div>
         );
   }
 };

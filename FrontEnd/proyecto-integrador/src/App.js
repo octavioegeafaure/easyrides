@@ -23,6 +23,7 @@ import { RequerirAuth } from "./Paginas/Reservas/RequerirAuth";
 import ReservaExitosa from "./Paginas/Reservas/ReservaExitosa/ReservaExitosa";
 import { Administrador } from "./Paginas/Home/Administrador/Administrador";
 import Politicas from "./Paginas/Home/Listado/Producto/Politicas";
+import MisReservas from "./Paginas/Home/MisReservas/MisReservas";
 
 function App() {
   const initialState = useInitialState();
@@ -64,7 +65,10 @@ function App() {
                                 path="/admin"
                                 element={<Administrador />}
                               />
-                              
+                              <Route
+                                path="/usuarios/:id/reservas"
+                                element={<MisReservas />}
+                              />
                             </Routes>
                             <Footer />
                           </BrowserRouter>

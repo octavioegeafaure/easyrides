@@ -58,7 +58,6 @@
   /* grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr); */
   padding: 10px 70px 0px 70px;
-  gap: .5rem;
   display: flex;
 }
 .imagen{
@@ -83,13 +82,13 @@
 .contenedor-IniciarReserva {
   /*contenedor donde va el calendario Y el container del boton iniciar reserva*/
   position: sticky;
-  top: 15vh;
+  top: 25vh;
   align-self: flex-start;
   border-radius: .5rem;
   box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
   padding: 2rem 2rem;
   z-index: 99;
-  width: 250%;
+  width: 200rem;
 
 }
 .contenedor-IniciarReserva-titulo{
@@ -97,7 +96,11 @@
   font-weight: 600;
   margin-bottom: 1rem;
 }
+.contenedor-IniciarReserva-titulo-caja{
+  display: flex;
+}
 .contenedor-IniciarReserva-titulo-p{
+  margin-left: .5rem;
   margin-bottom: .5rem;
   
 }
@@ -145,7 +148,7 @@
 
 .cuerpo-descripcion {
   /*Parrafo: Descripcion del carro */
-  width: 60%;
+  width: 80%;
   margin-top: 1rem;
   line-height: 1.5rem;
   text-align: justify;
@@ -212,9 +215,8 @@
 
 .calendarioInteractivo {
   background-color: white;
-  margin-top: 20px;
+  margin-top: 1rem;
   margin-bottom: 20px;
-  padding: 5px;
   border-radius: 5px;
   border-style: none;
   border: none;
@@ -236,25 +238,30 @@
 
 
 @media only screen and (max-width: 1200px) { 
+    /* .galeriaImg {
+        display: block;
+    } */
+    .contenedor-IniciarReserva{
+      margin-bottom: 2rem;
 
-  /*HAY QUE MODIFICAR LA IMAGEN GRANDE PARA QUE QUEDE EN LA PARTE DE ARRIBA
-
-
-    .reservaProductos {
-      /*Container de la seccion*/
-      
-      /* flex-direction: column; */
-    
-    /* } */
-    .contenedor-calendario{
-      width:900px;
     }
-    
+    /* .imagen{
+      width: 70%; 
+    } */
     .calendarioInteractivo {
-      margin: 0 auto; 
+      margin-top: 1rem;
+      width: 80%; 
     }
   }
-
+  @media only screen and (max-width: 1028px){
+    .galeriaImg{
+      display: block;
+    }
+    .contenedor-IniciarReserva {
+      width: 80%;
+    
+    }
+  }
   @media only screen and (max-width: 750px) { 
     .contenedor-calendario{
       width:800px;

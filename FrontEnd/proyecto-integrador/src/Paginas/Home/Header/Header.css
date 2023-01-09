@@ -71,14 +71,13 @@
     header nav {
         position: fixed;
         top: 0;
-        left: 50%;
+        left: 60%;
         height: 100vh;
-        width: 50%;
+        width: 40%;
         flex-direction: column;
         transition: 1s;
         transform: translateX(150vh);
         background-color: #F0572D;
-   
         z-index: 1000;
     }
 
@@ -92,17 +91,26 @@
         right: 1rem;
     }
 
-    .sesion {
+    /* .avatar-sesion {
         width: 148px;
         margin-top: 10rem;
         margin-left: 15rem;
+    } */
+    .botones-registro{
+        margin-top: 5rem;
     }
-
+    .sesion{
+        width: 148px;
+        background-color: rgb(237, 238, 238);
+        color: black;
+        font-weight: 500;
+        margin-left: 24rem;
+    }
     .cuenta {
         width: 148px;
         margin-bottom: 18rem;
-        margin-left: 15rem;
-        margin-top: 10rem;
+        margin-left: 24rem;
+        margin-top: 1rem;
         background-color: rgb(237, 238, 238);
         color: black;
         font-weight: 500;

@@ -12,7 +12,6 @@ export default function Cards() {
   const {setMostrarCategorias } = useContext(MostrarCategoriasContext);
   const { setDataProductos } = useContext(DataProductosContext);
   
-  
   return (
     <div>
       <h2 className="cardsCategoria-titulo">
