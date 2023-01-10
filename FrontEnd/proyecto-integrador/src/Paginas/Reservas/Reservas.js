@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import useFetch from "../../Hooks/useFetch";
 import Calendario from "../Home/Buscador/Calendario";
 import "./Reservas.css";
@@ -23,6 +23,9 @@ const Reservas = () => {
   const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
   const [submitForm, setSubmitForm] = useState(false);
   const [ elegirHorario, setElegirHorario ] = useState()
+  const [usuarioEligeSelect, setUsuarioEligeSelect] = useState(false);
+  const [errorSelect, setErrorSelect] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,6 +59,7 @@ const Reservas = () => {
       .then(function (response) {
         //handle success
         console.log(response);
+        navigate("/producto/:id/reservas/ok");
       })
       .catch(function (response) {
         //handle error
@@ -65,10 +69,12 @@ const Reservas = () => {
 
   const handleHorarios = (event) => {
     setElegirHorario(event.value)
+    setUsuarioEligeSelect(true)
   };
   return (
     <div className="reserva">
       <h2>Solicitá tu reserva</h2>
+      {console.log(usuarioEligeSelect)}
       <div className="reserva-superior">
         <div className="reserva-estatic">
           <Formik
@@ -183,7 +189,7 @@ const Reservas = () => {
                       <div className="error">{errors.ciudad}</div>
                     )}
                   />
-                </div>                
+                </div>
               </Form>
             )}
           </Formik>
@@ -196,6 +202,9 @@ const Reservas = () => {
                 options={valoresHorarios}
                 onChange={handleHorarios}
               />
+              {errorSelect && usuarioEligeSelect === false ? (
+                <p className="reserva-horario-select-error">Seleccioná un horario</p>
+              ) : null}
             </div>
           </div>
           <div className="reserva-inferior">
@@ -229,14 +238,17 @@ const Reservas = () => {
           <div className="reserva-superior-calendario">
             <p>Fecha seleccionada</p>
             <Calendario />
-            <Link to="/producto/:id/reservas/ok">
-              <button
-                className="reserva-superior-calendario-boton"
-                onClick={() => postReserva(JSON.stringify(infoPostReserva))}
-              >
-                Reservar
-              </button>
-            </Link>
+
+            <button
+              className="reserva-superior-calendario-boton"
+              onClick={() => {
+                usuarioEligeSelect
+                  ? postReserva(JSON.stringify(infoPostReserva))
+                  : setErrorSelect(true);
+              }}
+            >
+              Reservar
+            </button>
           </div>
         </div>
       </div>

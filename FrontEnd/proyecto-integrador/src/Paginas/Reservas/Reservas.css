@@ -82,7 +82,12 @@
 .reserva-horario-select {
     margin-top: 1rem;
 }
-
+.reserva-horario-select-error{
+    color: #e92b2d;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: .5rem;
+}
 .reserva-superior-formulario-linea1>p {
     /* margin: 0rem 0rem 2rem 0rem; */
     margin-bottom: .5rem;
