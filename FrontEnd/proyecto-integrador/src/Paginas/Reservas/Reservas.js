@@ -84,49 +84,9 @@ const Reservas = () => {
               email: "",
               ciudad: "",
             }}
-            validate={(valores) => {
-              let errores = {};
 
-              //validacion nombre
-              if (!valores.nombre) {
-                errores.nombre = "Por favor ingrese su nombre";
-              } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
-                errores.nombre =
-                  "El nombre solo puede contener letras y espacios, pueden llevar acentos.";
-              }
-
-              //validacion apellido
-              if (!valores.apellido) {
-                errores.apellido = "Por favor ingrese su apellido";
-              } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
-                errores.apellido =
-                  "El apellido solo puede contener letras y espacios, pueden llevar acentos.";
-              }
-
-              //validacion correo
-              if (!valores.email) {
-                errores.email = "Por favor ingresa un correo electronico";
-              } else if (
-                !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-                  valores.email
-                )
-              ) {
-                errores.email =
-                  "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.";
-              }
-
-              //validacion ciudad
-              if (!valores.ciudad) {
-                errores.ciudad = "Por favor ingrese la ciudad deseada";
-              } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.ciudad)) {
-                errores.nombre =
-                  "La ciudad solo puede contener letras y espacios, pueden llevar acentos.";
-              }
-
-              return errores;
-            }}
           >
-            {({ errors, values }) => (
+            {({values }) => (
               <Form className="reserva-superior-formulario">
                 <div className="reserva-superior-formulario-linea1">
                   <p>Nombre</p>
@@ -137,12 +97,6 @@ const Reservas = () => {
                     id="nombre"
                     readonly="readonly"
                   />
-                  <ErrorMessage
-                    name="nombre"
-                    component={() => (
-                      <div className="error">{errors.nombre}</div>
-                    )}
-                  />
 
                   <p>Correo electrónico</p>
                   <Field
@@ -151,12 +105,6 @@ const Reservas = () => {
                     placeholder={auth ? auth.email : null}
                     id="email"
                     readonly="readonly"
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component={() => (
-                      <div className="error">{errors.email}</div>
-                    )}
                   />
                 </div>
 
@@ -169,12 +117,6 @@ const Reservas = () => {
                     id="apellido"
                     readonly="readonly"
                   />
-                  <ErrorMessage
-                    name="apellido"
-                    component={() => (
-                      <div className="error">{errors.apellido}</div>
-                    )}
-                  />
 
                   <p>Ciudad</p>
                   <Field
@@ -182,12 +124,7 @@ const Reservas = () => {
                     name="ciudad"
                     placeholder="Ingresa la ciudad de retiro"
                     id="ciudad"
-                  />
-                  <ErrorMessage
-                    name="ciudad"
-                    component={() => (
-                      <div className="error">{errors.ciudad}</div>
-                    )}
+                    readonly="readonly"
                   />
                 </div>
               </Form>
@@ -203,7 +140,9 @@ const Reservas = () => {
                 onChange={handleHorarios}
               />
               {errorSelect && usuarioEligeSelect === false ? (
-                <p className="reserva-horario-select-error">Seleccioná un horario</p>
+                <p className="reserva-horario-select-error">
+                  Seleccioná un horario
+                </p>
               ) : null}
             </div>
           </div>

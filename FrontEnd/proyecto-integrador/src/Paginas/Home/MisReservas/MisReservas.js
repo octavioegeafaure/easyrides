@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react';
 import AuthContext from '../../../Context/AuthContext';
 import useFetch from '../../../Hooks/useFetch'
@@ -9,7 +9,10 @@ const MisReservas = () => {
   const urlMisReservas = "http://localhost:8080/usuarios/" + auth.id + "/reservas";
   const { data } = useFetch(urlMisReservas);
 //localhost:8080/usuarios/1/reservas
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
  return (
   <div className="misReservas">
     <h2 className="titulo ">Tus Reservas</h2>

@@ -75,7 +75,7 @@ const Producto = () => {
 
       <div className="galeriaImg">
         <div>
-          <div className="carousel">
+
          <Carousel  className="imagen">
           <div>
             <img src={data && data.productos.imagenes[0].url} alt="Imagen1" />
@@ -92,9 +92,8 @@ const Producto = () => {
           <div>
             <img src={data && data.productos.imagenes[4].url} />
           </div>
-
         </Carousel>
-        </div>
+ 
         <div className="cuerpo-contenedor">
           <div className="Seccion1">
             <h2 className="cuerpo-titulo">{data && data.productos.titulo}</h2>

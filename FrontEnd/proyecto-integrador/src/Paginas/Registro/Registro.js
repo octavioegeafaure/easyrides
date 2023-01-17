@@ -12,6 +12,9 @@ function Registro() {
   // const urlRegistro =
   //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/register";
   const urlRegistro = "http://localhost:8080/auth/register";
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   //validacion contraseña
   const validarContraseña = (values) => {
     let error = "";

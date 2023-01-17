@@ -8,11 +8,31 @@
     border-color: lightgrey;
     border-width: 1px;
     padding: .4rem;
+    width: 400px;
+    height: 4rem;
 }
 .calendario-check{
     display: flex;
-    justify-content: space-around;
-
+    margin-bottom: .5rem;
+    justify-content: center;
+    /* margin: 0 auto; */
+}
+.calendario-check-p-in {
+    color: black;
+    font-size: 12px;
+    margin-right: auto;
+    font-weight: 600;
+    margin-left: .3rem;
+}
+.calendario-check-p-out{
+    color: black;
+    font-size: 12px;
+    margin-right: auto;
+    font-weight: 600;
+}
+.react-daterange-picker__range-divider{
+    margin-left: 5rem;
+    color: white;
 }
 .react-daterange-picker__button:enabled:hover .react-daterange-picker__button__icon, .react-daterange-picker__button:enabled:focus .react-daterange-picker__button__icon[disabled]{
     stroke: black;
@@ -21,7 +41,7 @@
     border: none;
     border-radius: .5rem;
     background-color: white;
-    width: 400px;
+    width: 390px;
 }
 .react-calendar {
     width: 350px;
@@ -34,7 +54,10 @@
     line-height: 1.125em;
     
 }
-
+.react-daterange-picker__button{
+    display: none;
+    margin-right: 4rem;
+}
 .react-calendar--doubleView {
     width: 700px;
 }
@@ -182,7 +205,9 @@
 .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
 }
-
+.react-daterange-picker__inputGroup{
+    flex-grow: 0;
+}
 @media only screen and (max-width: 950px) {
     .react-calendar--doubleView .react-calendar__viewContainer {
             display: flex;

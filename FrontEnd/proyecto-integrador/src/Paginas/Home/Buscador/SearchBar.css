@@ -6,15 +6,12 @@
     border-color:   lightgrey;
     border-width: 1px;
 }
-.searchBar:active{
-    border-color: black;
-    border-width: 2px;
-}
+
 .searchBar > p {
     margin-top: .5rem;
     margin-bottom: -.2rem;
     margin-left: .5rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 .searchBar-individual{
     margin-bottom: .1rem;
@@ -32,6 +29,7 @@
 .searchBar-ubicacion{
     color: black;
     font-size: 12px;
+
 }
 /* @media only screen and (max-width: 1024px){
     .searchBar {

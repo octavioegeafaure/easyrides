@@ -15,12 +15,10 @@ export const SearchBar = () => {
   const { setDataProductos } = useContext(DataProductosContext);
   // const [elegirCiudades, setElegirCiudades] = useState()
   // context de busquedas que va a guardar elegirciudades y el resultado filtrado
-  const [ color, setColor ] = useState()
   const { elegirCiudades, setElegirCiudades } = useContext(CiudadesContext);
   const { setMostrarCategorias } = useContext(MostrarCategoriasContext);
   const manejadorSelect = (event) => {
     // setElegirCiudades(event.label);
-    console.log(event.value);
     setElegirCiudades(event.value);
     setDataProductos(false)
     setMostrarCategorias(false)
@@ -40,7 +38,7 @@ export const SearchBar = () => {
           }))
         }
         onChange={manejadorSelect}
-        placeholder={<div className="placeholder">Mendoza</div>}
+        placeholder={<div className="placeholder">Elegí tu ubicación</div>}
         styles={{
           control: (base, state) => ({
             ...base,

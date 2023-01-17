@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ReservaExitosa.css";
 
 import { Link } from "react-router-dom";
 
-function ReservaExitosa() {
 
+function ReservaExitosa() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     return (
         <div className="contenedor">
 

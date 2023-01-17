@@ -38,7 +38,7 @@
     /*Mensaje del buscador*/
     color: white;
     font-size: 70px;
-    margin-left: 3rem;
+    margin-left: 4rem;
     margin-top: 1.5rem;
     position: absolute;
 }
@@ -67,6 +67,7 @@
         flex-direction: column;
         margin-top: 15rem;
     }
+    
 }
 @media only screen and (max-width: 950px) {
     .buscadores {

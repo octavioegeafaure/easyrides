@@ -21,6 +21,10 @@ function Login() {
   // const urlLogin =
   //   "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
   const urlLogin = "http://localhost:8080/auth/login";
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
     const getUsuario = (objetoUsuario) => {
     axios({
       method: "post",
